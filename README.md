@@ -4,12 +4,12 @@ This code implements a producer-consumer scenario using shared memory and signal
 
 Signals:
 - Two custom signals are defined: WAKEUP_SIGNAL (SIGUSR1) and END_SIGNAL (SIGUSR2).
-- Signal handling functions are implemented for these signals: endSignalHandler for END_SIGNAL.
+- Signal handling functions are implemented for these signals.
 
 Circular Buffer:
-- A shared circular buffer structure CIRCULAR_BUFFER is defined.
+- A shared circular buffer structure CIRCULAR_BUFFER.
 - It contains fields for count, lower index, upper index, and a buffer array to hold data.
-- Functions putValue and getValue manipulate the buffer for adding and retrieving data respectively.
+- Functions putValue and getValue manipulate the buffer for adding and retrieving data.
 - The buffer is shared between the producer and consumer processes using shared memory (mmap).
 
 Producer Function (producer):
