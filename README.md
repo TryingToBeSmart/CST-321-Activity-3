@@ -1,6 +1,7 @@
 # CST-321-Activity-3
 
-This code implements a producer-consumer scenario using shared memory and signals for synchronization.
+## More Signals
+This code in the [more_signals program](./code/more_signals.c) implements a producer-consumer scenario using shared memory and signals for synchronization.
 
 Signals:
 - Two custom signals are defined: WAKEUP_SIGNAL (SIGUSR1) and END_SIGNAL (SIGUSR2).
