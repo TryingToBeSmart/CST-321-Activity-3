@@ -10,13 +10,13 @@
 #include <signal.h>
 #include <stdbool.h>
 #include <string.h>
+#include <asm/signal.h>
 
-int WAKEUP = SIGUSR1;
+int WAKEUP_SIGNAL = SIGUSR1;
 int END_SIGNAL = SIGUSR2; // for producer to tell consumer to end
 sigset_t sigSet;
 
 pid_t otherPid;
-pthread_mutex_t mutex;
 
 bool proceed = true; // changes to fales when producer is finished
 
@@ -72,7 +72,7 @@ void producer(int length, char *message[])
 
         // Signal the consumer
         printf("Waking Consumer...\n");
-        kill(otherPid, WAKEUP); 
+        kill(otherPid, WAKEUP_SIGNAL); 
 
         sleep(1); // Simulate processing time
     }
@@ -84,7 +84,7 @@ void producer(int length, char *message[])
 
     // waking the consumer 1 last time and should end program
     printf("Waking Consumer...\n");
-    kill(otherPid, WAKEUP); 
+    kill(otherPid, WAKEUP_SIGNAL); 
     _exit(1);
 }
 
@@ -94,7 +94,7 @@ void consumer()
 {  
     // Set up a Signal set
     sigemptyset(&sigSet);
-    sigaddset(&sigSet, WAKEUP);
+    sigaddset(&sigSet, WAKEUP_SIGNAL);
     sigprocmask(SIG_BLOCK, &sigSet, NULL);
 
 
@@ -123,7 +123,7 @@ void consumer()
         {    
             // Signal the producer
             printf("Waking Producer...\n");
-            kill(otherPid, WAKEUP);
+            kill(otherPid, WAKEUP_SIGNAL);
         }
     }
 
@@ -163,7 +163,9 @@ int getValue()
 }
 
 
-
+// Takes an argument to run the program, creates 2 threads that run simultaniously.
+// 1 thread (producer) adds the chars to the buffer and the other thread (consumer)
+// consumes them from the buffer and prints them to the console
 int main(int argc, char* argv[])
 {
     pid_t pid;
@@ -201,8 +203,7 @@ int main(int argc, char* argv[])
         otherPid = pid;
         consumer();
     }
-
-    pthread_mutex_destroy(&mutex);
+    
     pthread_exit(NULL);
     return 0;
 }
