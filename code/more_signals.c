@@ -10,7 +10,8 @@
 #include <signal.h>
 #include <stdbool.h>
 #include <string.h>
-#include <asm/signal.h>
+#include <bits/types/sigset_t.h>
+#include <bits/sigaction.h>
 
 int WAKEUP_SIGNAL = SIGUSR1;
 int END_SIGNAL = SIGUSR2; // for producer to tell consumer to end
@@ -168,6 +169,12 @@ int getValue()
 // consumes them from the buffer and prints them to the console
 int main(int argc, char* argv[])
 {
+    if (argc <= 1)
+    {
+        printf("Must submit arguments to run this program\n");
+        return -1;
+    }
+
     pid_t pid;
 
     // Create shared memory for the Circular Buffer to be shared between
