@@ -35,5 +35,7 @@ This setup ensures synchronization between the producer and consumer processes u
 Video:
 [![More Signals program video](./screenshots/more_signals_video_screenshot.png)](https://www.loom.com/share/8609dc1b5eb849b5a5a3b159204d29d9)
 
-##
-[![]()](https://www.loom.com/share/d1213e6625e344e6ad0232332561729b?sid=2dc71db0-65b7-4620-bb10-059e3805f15b)
+## More Signals and Mutexes
+
+Video:
+[![Mutex program video](./screenshots/mutexes_video_screenshot.png)](https://www.loom.com/share/d1213e6625e344e6ad0232332561729b?sid=2dc71db0-65b7-4620-bb10-059e3805f15b)
