@@ -36,19 +36,19 @@ Video:
 [![More Signals program video](./screenshots/more_signals_video_screenshot.png)](https://www.loom.com/share/8609dc1b5eb849b5a5a3b159204d29d9)
 
 ## More Signals and Mutexes
-This [more_signals_and_mutexes](./code/more_signals_and_mutexes.c) program demonstrates the use of mutex locks and the pthread_mutex_trylock() function to control access to a shared variable between two threads.
+This [more_signals_and_mutexes](./code/more_signals_and_mutexes.c) program demonstrates the use of mutex locks and the pthread_mutex_trylock() function to control access to a shared variable between two threads.  It demonstrates the possibility of mutex starvation because the monitor_thread may repeatedly fail to acquire the mutex.
 
 Features:
-Two Threads:
+- Two Threads:
+    - counter_thread: Increments a shared counter within a critical section protected by a mutex lock.
+    - monitor_thread: Attempts to read the shared counter using pthread_mutex_trylock() every 3 seconds.
 
-counter_thread: Increments a shared counter within a critical section protected by a mutex lock.
-monitor_thread: Attempts to read the shared counter using pthread_mutex_trylock() every 3 seconds.
-Mutex Locking:
+- Mutex Locking:
+    - The pthread_mutex_lock() function is used to acquire the mutex lock before incrementing the counter in the counter_thread.
+    - The pthread_mutex_trylock() function is used in the monitor_thread to attempt to acquire the lock without blocking.
 
-The pthread_mutex_lock() function is used to acquire the mutex lock before incrementing the counter in the counter_thread.
-The pthread_mutex_trylock() function is used in the monitor_thread to attempt to acquire the lock without blocking.
-Resource Access Control:
+- Resource Access Control:
+    - Both threads share the same mutex to control access to the shared counter variable.
 
-Both threads share the same mutex to control access to the shared counter variable.
 Video:
 [![Mutex program video](./screenshots/mutexes_video_screenshot.png)](https://www.loom.com/share/d1213e6625e344e6ad0232332561729b?sid=2dc71db0-65b7-4620-bb10-059e3805f15b)
