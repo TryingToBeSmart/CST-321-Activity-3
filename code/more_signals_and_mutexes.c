@@ -6,8 +6,6 @@
 int end_time;
 pthread_mutex_t mutex;
 int counter; // Global variable for 2 threads to share and increment
-pid_t pid;
-pid_t otherPid;
 
 void *counter_thread (void *arg)
 {
