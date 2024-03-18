@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "types.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "sigset_t.h": "c",
+        "fcntl.h": "c"
     }
 }

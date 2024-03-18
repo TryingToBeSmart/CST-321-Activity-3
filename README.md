@@ -55,4 +55,4 @@ Video:
 
 ## More Signals and Semaphores
 
-[![Semaphores Video screenshot]()](https://www.loom.com/share/3c850a3861e74ee7bf551d7177bf6acf?sid=c104a135-095b-497c-99eb-c817df78de10)
+[![Semaphores Video screenshot](./screenshots/semaphores_video_screenshots.png)](https://www.loom.com/share/3c850a3861e74ee7bf551d7177bf6acf?sid=c104a135-095b-497c-99eb-c817df78de10)
