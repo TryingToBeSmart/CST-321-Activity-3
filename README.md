@@ -57,16 +57,21 @@ Video:
 
 The primary focus is on simulating a hung child process and detecting and handling it appropriately using signals.
 
-Semaphore Management
-A semaphore is utilized to control access to a shared resource between the parent and child processes. The semaphore is initialized with a count of 1, ensuring mutual exclusion.
+Semaphore Management:
+- A semaphore is utilized to control access to a shared resource between the parent and child processes. 
+- The semaphore is initialized with a count of 1, ensuring mutual exclusion.
 
-Child Process Behavior
-The child process demonstrates a simulated hung state by acquiring the semaphore lock and then entering a sleep state for an extended period. This behavior mimics a process that becomes unresponsive or stuck.
+Child Process Behavior:
+- The child process demonstrates a simulated hung state by acquiring the semaphore lock and then entering a sleep state for an extended period. 
+- This behavior mimics a process that becomes unresponsive or stuck.
 
-Parent Process Monitoring
-The parent process is responsible for monitoring the child process's state. It attempts to acquire the semaphore within a time frame. If unsuccessful, it initiates a timer thread to check for a hung child process. Upon detection of a hung state, it sends a signal to terminate the child process.
+Parent Process Monitoring:
+- The parent process is responsible for monitoring the child process's state. It attempts to acquire the semaphore within a time frame. If unsuccessful, it initiates a timer thread to check for a hung child process. 
+- Upon detection of a hung state, it sends a signal to terminate the child process.
 
-Signal Handling
-Signal handlers are implemented to facilitate communication between the parent and child processes. Upon receiving specific signals, such as SIGUSR1, the child process terminates gracefully. Additionally, the parent process utilizes signals to verify the child process's liveness.
+Signal Handling:
+- Signal handlers are implemented to facilitate communication between the parent and child processes. Upon receiving specific signals, such as SIGUSR1, the child process terminates gracefully. 
+- The parent process utilizes signals to verify the child process's liveness.
 
+Video:
 [![Semaphores Video screenshot](./screenshots/semaphores_video_screenshots.png)](https://www.loom.com/share/3c850a3861e74ee7bf551d7177bf6acf?sid=c104a135-095b-497c-99eb-c817df78de10)
