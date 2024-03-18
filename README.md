@@ -74,4 +74,5 @@ Signal Handling:
 - The parent process utilizes signals to verify the child process's liveness.
 
 Video:
+
 [![Semaphores Video screenshot](./screenshots/semaphores_video_screenshots.png)](https://www.loom.com/share/3c850a3861e74ee7bf551d7177bf6acf?sid=c104a135-095b-497c-99eb-c817df78de10)
