@@ -55,7 +55,7 @@ Video:
 
 ## More Signals and Semaphores
 
-The primary focus is on simulating a hung child process and detecting and handling it appropriately using signals.
+The primary focus of the [more_signals_and_semaphores](./code/more_signals_and_semaphores.c) program is on simulating a hung child process and detecting and handling it appropriately using signals.
 
 Semaphore Management:
 - A semaphore is utilized to control access to a shared resource between the parent and child processes. 
