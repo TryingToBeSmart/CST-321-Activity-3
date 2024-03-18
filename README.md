@@ -52,3 +52,7 @@ Features:
 
 Video:
 [![Mutex program video](./screenshots/mutexes_video_screenshot.png)](https://www.loom.com/share/d1213e6625e344e6ad0232332561729b?sid=2dc71db0-65b7-4620-bb10-059e3805f15b)
+
+## More Signals and Semaphores
+
+[![Semaphores Video screenshot]()](https://www.loom.com/share/3c850a3861e74ee7bf551d7177bf6acf?sid=c104a135-095b-497c-99eb-c817df78de10)
