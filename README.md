@@ -51,6 +51,7 @@ Features:
     - Both threads share the same mutex to control access to the shared counter variable.
 
 Video:
+
 [![Mutex program video](./screenshots/mutexes_video_screenshot.png)](https://www.loom.com/share/d1213e6625e344e6ad0232332561729b?sid=2dc71db0-65b7-4620-bb10-059e3805f15b)
 
 ## More Signals and Semaphores
